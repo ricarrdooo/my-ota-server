@@ -1,0 +1,773 @@
+{
+  "source": "Current production UI with isolated demonstration data",
+  "screenshots": [
+    {
+      "id": "01_login",
+      "file": "screenshots/01_login.png",
+      "title": "登录管理后台",
+      "width": 464,
+      "height": 543,
+      "crop": {
+        "x": 488,
+        "y": 278,
+        "width": 464,
+        "height": 543
+      },
+      "annotations": [
+        {
+          "selector": "[name=username]",
+          "label": "输入管理员账号 admin",
+          "number": 1,
+          "rect": {
+            "x": 53,
+            "y": 246.1875,
+            "width": 358,
+            "height": 43
+          }
+        },
+        {
+          "selector": "[name=password]",
+          "label": "输入你设置的登录密码",
+          "number": 2,
+          "rect": {
+            "x": 53,
+            "y": 333.375,
+            "width": 358,
+            "height": 43
+          }
+        },
+        {
+          "selector": "button[type=submit]",
+          "label": "进入工作台",
+          "number": 3,
+          "rect": {
+            "x": 53,
+            "y": 402.375,
+            "width": 358,
+            "height": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": "02_overview",
+      "file": "screenshots/02_overview.png",
+      "title": "认识工作台",
+      "width": 1440,
+      "height": 1100,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1100
+      },
+      "annotations": [
+        {
+          "selector": "nav",
+          "label": "从这里切换功能页",
+          "number": 1,
+          "rect": {
+            "x": 18,
+            "y": 139,
+            "width": 183,
+            "height": 283
+          }
+        },
+        {
+          "selector": "#main h1",
+          "label": "查看当前功能与快捷操作",
+          "number": 2,
+          "rect": {
+            "x": 256,
+            "y": 104,
+            "width": 240,
+            "height": 39
+          }
+        },
+        {
+          "selector": "#refresh",
+          "label": "手动刷新数据",
+          "number": 3,
+          "rect": {
+            "x": 1332,
+            "y": 19.5,
+            "width": 30,
+            "height": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "03_product",
+      "file": "screenshots/03_product.png",
+      "title": "新建产品",
+      "width": 644,
+      "height": 520,
+      "crop": {
+        "x": 398,
+        "y": 290,
+        "width": 644,
+        "height": 520
+      },
+      "annotations": [
+        {
+          "selector": "[name=name]",
+          "label": "填写便于识别的产品名称",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 129.609375,
+            "width": 562,
+            "height": 42.796875
+          }
+        },
+        {
+          "selector": "[name=id]",
+          "label": "填写唯一英文标识",
+          "number": 2,
+          "rect": {
+            "x": 41,
+            "y": 216.59375,
+            "width": 562,
+            "height": 42.796875
+          }
+        },
+        {
+          "selector": "#entry-form [type=submit]",
+          "label": "保存产品",
+          "number": 3,
+          "rect": {
+            "x": 545,
+            "y": 438.578125,
+            "width": 58,
+            "height": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "04_target",
+      "file": "screenshots/04_target.png",
+      "title": "核对硬件型号并导出配置",
+      "width": 1172,
+      "height": 205,
+      "crop": {
+        "x": 244,
+        "y": 515,
+        "width": 1172,
+        "height": 205
+      },
+      "annotations": [
+        {
+          "selector": "[data-manual-target] tbody td:first-child",
+          "label": "先核对硬件型号与标识",
+          "number": 1,
+          "rect": {
+            "x": 13,
+            "y": 113.59375,
+            "width": 260.859375,
+            "height": 78.03125
+          }
+        },
+        {
+          "selector": "#main [data-action=profile]",
+          "label": "导出公开配置给设备开发者",
+          "number": 2,
+          "rect": {
+            "x": 870.359375,
+            "y": 136.609375,
+            "width": 66,
+            "height": 32.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "05_add_device",
+      "file": "screenshots/05_add_device.png",
+      "title": "添加一台设备",
+      "width": 644,
+      "height": 554,
+      "crop": {
+        "x": 398,
+        "y": 273,
+        "width": 644,
+        "height": 554
+      },
+      "annotations": [
+        {
+          "selector": "[name=name]",
+          "label": "设备名称按位置填写",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 129.40625,
+            "width": 562,
+            "height": 42.796875
+          }
+        },
+        {
+          "selector": "[name=target_id]",
+          "label": "选择匹配的硬件型号",
+          "number": 2,
+          "rect": {
+            "x": 41,
+            "y": 216.390625,
+            "width": 562,
+            "height": 41
+          }
+        },
+        {
+          "selector": "[name=channel]",
+          "label": "一般选择 stable",
+          "number": 3,
+          "rect": {
+            "x": 41,
+            "y": 301.578125,
+            "width": 562,
+            "height": 41
+          }
+        },
+        {
+          "selector": "#entry-form [type=submit]",
+          "label": "保存设备",
+          "number": 4,
+          "rect": {
+            "x": 545,
+            "y": 472.765625,
+            "width": 58,
+            "height": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "06_credentials",
+      "file": "screenshots/06_credentials.png",
+      "title": "保存设备凭据",
+      "width": 644,
+      "height": 567,
+      "crop": {
+        "x": 398,
+        "y": 266,
+        "width": 644,
+        "height": 567
+      },
+      "annotations": [
+        {
+          "selector": "#dialog-body pre:first-of-type",
+          "label": "设备设置页填这个设备标识",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 197.40625,
+            "width": 562,
+            "height": 48.6875
+          }
+        },
+        {
+          "selector": "#secret-token",
+          "label": "访问密钥仅首次显示",
+          "number": 2,
+          "rect": {
+            "x": 41,
+            "y": 386.96875,
+            "width": 562,
+            "height": 54.09375
+          }
+        },
+        {
+          "selector": "[data-action=copy-token]",
+          "label": "复制并妥善保存",
+          "number": 3,
+          "rect": {
+            "x": 425,
+            "y": 486.0625,
+            "width": 84,
+            "height": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "08_key_import",
+      "file": "screenshots/08_key_import.png",
+      "title": "首次导入本机签名私钥",
+      "width": 711,
+      "height": 425,
+      "crop": {
+        "x": 357,
+        "y": 593,
+        "width": 711,
+        "height": 425
+      },
+      "annotations": [
+        {
+          "selector": "#pack-key",
+          "label": "选择对应硬件的 private.pem",
+          "number": 1,
+          "rect": {
+            "x": 27,
+            "y": 204.171875,
+            "width": 657,
+            "height": 53.1875
+          }
+        },
+        {
+          "selector": "#pack-import-password",
+          "label": "加密文件仅首次输入保护密码",
+          "number": 2,
+          "rect": {
+            "x": 27,
+            "y": 301.546875,
+            "width": 657,
+            "height": 42.796875
+          }
+        },
+        {
+          "selector": "#pack-import-key",
+          "label": "导入后由当前浏览器记住",
+          "number": 3,
+          "rect": {
+            "x": 27,
+            "y": 359.34375,
+            "width": 97,
+            "height": 41
+          }
+        }
+      ]
+    },
+    {
+      "id": "07_pack",
+      "file": "screenshots/07_pack.png",
+      "title": "日常打包上传固件",
+      "width": 726,
+      "height": 671,
+      "crop": {
+        "x": 357,
+        "y": 276,
+        "width": 726,
+        "height": 671
+      },
+      "annotations": [
+        {
+          "selector": "#pack-device",
+          "label": "选择要更新的设备",
+          "number": 1,
+          "rect": {
+            "x": 12,
+            "y": 42.8125,
+            "width": 702,
+            "height": 44
+          }
+        },
+        {
+          "selector": "#pack-firmware",
+          "label": "选择编译生成的应用 bin",
+          "number": 2,
+          "rect": {
+            "x": 12,
+            "y": 169.796875,
+            "width": 702,
+            "height": 53.1875
+          }
+        },
+        {
+          "selector": "#pack-notes",
+          "label": "写清本次更新内容",
+          "number": 3,
+          "rect": {
+            "x": 12,
+            "y": 295.859375,
+            "width": 702,
+            "height": 90
+          }
+        },
+        {
+          "selector": "#pack-form [type=submit]",
+          "label": "打包并上传",
+          "number": 4,
+          "rect": {
+            "x": 617,
+            "y": 619.625,
+            "width": 97,
+            "height": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "09_pack_result",
+      "file": "screenshots/09_pack_result.png",
+      "title": "检查上传结果并确认发布",
+      "width": 704,
+      "height": 641,
+      "crop": {
+        "x": 368,
+        "y": 229,
+        "width": 704,
+        "height": 641
+      },
+      "annotations": [
+        {
+          "selector": "#dialog-body .pack-success",
+          "label": "上传成功还不等于已发布",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 85.84375,
+            "width": 622,
+            "height": 79.796875
+          }
+        },
+        {
+          "selector": "#pack-publish-channel",
+          "label": "确认发布到 stable 通道",
+          "number": 2,
+          "rect": {
+            "x": 41,
+            "y": 448.015625,
+            "width": 622,
+            "height": 41
+          }
+        },
+        {
+          "selector": "#pack-confirm-publish",
+          "label": "确认后设备才能检查到此版本",
+          "number": 3,
+          "rect": {
+            "x": 526,
+            "y": 560.15625,
+            "width": 137,
+            "height": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "10_publish",
+      "file": "screenshots/10_publish.png",
+      "title": "固件库与发布入口",
+      "width": 1232,
+      "height": 680,
+      "crop": {
+        "x": 208,
+        "y": 58,
+        "width": 1232,
+        "height": 680
+      },
+      "annotations": [
+        {
+          "selector": "[data-artifact-id=\"40794129f2954c11afc87cf8b61c5a85\"] [data-action=publish]",
+          "label": "可从固件库再次发布",
+          "number": 1,
+          "rect": {
+            "x": 861.6875,
+            "y": 382.953125,
+            "width": 77,
+            "height": 32.5
+          }
+        },
+        {
+          "selector": "[data-artifact-id=\"40794129f2954c11afc87cf8b61c5a85\"] [data-action=delete-artifact]",
+          "label": "手动管理不再需要的文件",
+          "number": 2,
+          "rect": {
+            "x": 946.6875,
+            "y": 382.953125,
+            "width": 77,
+            "height": 32.5
+          }
+        },
+        {
+          "selector": "#main [data-action=pack]",
+          "label": "下次更新从这里开始",
+          "number": 3,
+          "rect": {
+            "x": 1089,
+            "y": 61.296875,
+            "width": 107,
+            "height": 39
+          }
+        }
+      ]
+    },
+    {
+      "id": "11_upgrade",
+      "file": "screenshots/11_upgrade.png",
+      "title": "从网页下发升级",
+      "width": 684,
+      "height": 687,
+      "crop": {
+        "x": 378,
+        "y": 206,
+        "width": 684,
+        "height": 687
+      },
+      "annotations": [
+        {
+          "selector": ".command-version",
+          "label": "核对当前版本与待升级版本",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 211.234375,
+            "width": 602,
+            "height": 55.1875
+          }
+        },
+        {
+          "selector": ".command-expiry select",
+          "label": "默认等待 15 分钟",
+          "number": 2,
+          "rect": {
+            "x": 468,
+            "y": 422.5,
+            "width": 175,
+            "height": 41
+          }
+        },
+        {
+          "selector": ".device-control-dialog .form-actions .primary",
+          "label": "确认升级后等待设备领取",
+          "number": 3,
+          "rect": {
+            "x": 559,
+            "y": 608.4375,
+            "width": 84,
+            "height": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "12_control_success",
+      "file": "screenshots/12_control_success.png",
+      "title": "确认设备已经执行成功",
+      "width": 684,
+      "height": 637,
+      "crop": {
+        "x": 378,
+        "y": 231,
+        "width": 684,
+        "height": 637
+      },
+      "annotations": [
+        {
+          "selector": ".command-receipt",
+          "label": "以执行成功作为完成依据",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 206.453125,
+            "width": 602,
+            "height": 119.59375
+          }
+        },
+        {
+          "selector": ".command-history-list li:first-child",
+          "label": "以后可在控制记录里查询",
+          "number": 2,
+          "rect": {
+            "x": 41,
+            "y": 407.84375,
+            "width": 602,
+            "height": 105.390625
+          }
+        },
+        {
+          "selector": ".command-history-list li:first-child a",
+          "label": "打开这次升级的详细记录",
+          "number": 3,
+          "rect": {
+            "x": 57,
+            "y": 481.640625,
+            "width": 78,
+            "height": 17.59375
+          }
+        }
+      ]
+    },
+    {
+      "id": "13_events",
+      "file": "screenshots/13_events.png",
+      "title": "查看升级过程",
+      "width": 644,
+      "height": 538,
+      "crop": {
+        "x": 398,
+        "y": 281,
+        "width": 644,
+        "height": 538
+      },
+      "annotations": [
+        {
+          "selector": "#dialog-body .setup-step:first-child",
+          "label": "先下载固件",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 85.4375,
+            "width": 562,
+            "height": 68.6875
+          }
+        },
+        {
+          "selector": "#dialog-body .setup-step:last-child",
+          "label": "启动确认后才是升级成功",
+          "number": 2,
+          "rect": {
+            "x": 41,
+            "y": 428.875,
+            "width": 562,
+            "height": 67.6875
+          }
+        }
+      ]
+    },
+    {
+      "id": "14_restart",
+      "file": "screenshots/14_restart.png",
+      "title": "从网页重启设备",
+      "width": 684,
+      "height": 696,
+      "crop": {
+        "x": 378,
+        "y": 202,
+        "width": 684,
+        "height": 696
+      },
+      "annotations": [
+        {
+          "selector": ".command-device",
+          "label": "先确认设备名称",
+          "number": 1,
+          "rect": {
+            "x": 41,
+            "y": 102.015625,
+            "width": 602,
+            "height": 83.6875
+          }
+        },
+        {
+          "selector": ".command-expiry select",
+          "label": "离线时可排队等设备上线",
+          "number": 2,
+          "rect": {
+            "x": 468,
+            "y": 343.78125,
+            "width": 175,
+            "height": 41
+          }
+        },
+        {
+          "selector": ".device-control-dialog .form-actions .primary",
+          "label": "确认重启，联网补报后成功",
+          "number": 3,
+          "rect": {
+            "x": 559,
+            "y": 616.96875,
+            "width": 84,
+            "height": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "15_delete",
+      "file": "screenshots/15_delete.png",
+      "title": "删除不用的固件前先预览",
+      "width": 684,
+      "height": 493,
+      "crop": {
+        "x": 378,
+        "y": 303,
+        "width": 684,
+        "height": 493
+      },
+      "annotations": [
+        {
+          "selector": "#dialog-body",
+          "label": "先检查影响范围与受保护原因",
+          "number": 1,
+          "rect": {
+            "x": 13,
+            "y": 100.796875,
+            "width": 658,
+            "height": 379.390625
+          }
+        },
+        {
+          "selector": "#dialog-body .form-actions",
+          "label": "核对后确认，或取消保留",
+          "number": 2,
+          "rect": {
+            "x": 41,
+            "y": 391.1875,
+            "width": 602,
+            "height": 61
+          }
+        }
+      ]
+    },
+    {
+      "id": "16_device_settings",
+      "file": "screenshots/16_device_settings.png",
+      "title": "填写设备的个人 OTA 服务器",
+      "width": 628,
+      "height": 732,
+      "crop": {
+        "x": 398,
+        "y": 1926,
+        "width": 628,
+        "height": 732
+      },
+      "annotations": [
+        {
+          "selector": "#ota_url",
+          "label": "填服务器根地址，不带 API 路径",
+          "number": 1,
+          "rect": {
+            "x": 33.5,
+            "y": 172.65625,
+            "width": 562,
+            "height": 44
+          }
+        },
+        {
+          "selector": "#ota_device",
+          "label": "填设备标识，不是代理标识",
+          "number": 2,
+          "rect": {
+            "x": 33.5,
+            "y": 275.90625,
+            "width": 562,
+            "height": 44
+          }
+        },
+        {
+          "selector": "#ota_token",
+          "label": "首次填写设备访问密钥",
+          "number": 3,
+          "rect": {
+            "x": 33.5,
+            "y": 357.90625,
+            "width": 562,
+            "height": 44
+          }
+        },
+        {
+          "selector": "#ota_save",
+          "label": "保存 OTA 配置",
+          "number": 4,
+          "rect": {
+            "x": 33.5,
+            "y": 657.65625,
+            "width": 562,
+            "height": 41
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{$OTA_DOMAIN} {
+    request_body {
+        max_size 34MB
+    }
+    reverse_proxy app:8000
+}

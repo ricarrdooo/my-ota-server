@@ -1,0 +1,6 @@
+<script setup>
+import {computed,inject,ref} from 'vue';import PageHeader from '../components/PageHeader.vue';import Panel from '../components/Panel.vue';import Empty from '../components/Empty.vue';import AttemptTable from '../components/AttemptTable.vue';import {matches,taskLabels} from '../format.js';
+const {snapshot}=inject('admin'),query=ref(''),status=ref('');
+const rows=computed(()=>snapshot.value.attempts.filter(item=>matches(item,query.value,['id','device_name','target_name','version','error'])&&(!status.value||item.state===status.value)));
+</script>
+<template><PageHeader title="升级记录" description="传输完成不代表新应用已经启动；每次更新都可追溯。"/><Panel title="最近 500 次升级"><div class="resource-toolbar in-panel"><div class="search-field"><span>⌕</span><input v-model="query" type="search" placeholder="搜索设备、版本、标识或错误" aria-label="搜索升级记录"/></div><select v-model="status" class="filter-select" aria-label="升级状态"><option value="">全部状态</option><option v-for="(label,value) in taskLabels" :key="value" :value="value">{{label}}</option></select><span class="result-count">{{rows.length}} 项结果</span></div><AttemptTable v-if="rows.length" :rows="rows"/><Empty v-else :title="query||status?'没有匹配的升级记录':'暂无升级尝试'" description="设备创建升级尝试后，记录会自动出现。"/></Panel></template>

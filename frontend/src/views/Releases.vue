@@ -1,0 +1,15 @@
+<script setup>
+import {computed,inject,ref} from 'vue';
+import PageHeader from '../components/PageHeader.vue';import Panel from '../components/Panel.vue';import Empty from '../components/Empty.vue';import Action from '../components/Action.vue';import Badge from '../components/Badge.vue';import Table from '../components/Table.vue';import BuildIdentity from '../components/BuildIdentity.vue';import FileStatus from '../components/FileStatus.vue';import {matches,when} from '../format.js';
+const {snapshot}=inject('admin'),query=ref(''),channel=ref(''),status=ref('');
+const active=computed(()=>snapshot.value.releases.filter(item=>item.active).length);
+const rows=computed(()=>snapshot.value.releases.filter(item=>matches(item,query.value,['id','artifact_id','version','notes','sha256','target_name'])&&(!channel.value||item.channel===channel.value)&&(!status.value||(status.value==='active'?item.active:!item.active))));
+</script>
+<template>
+ <PageHeader title="版本发布" description="每次发布独立管理，同版本的不同构建按 SHA 区分。"><Action kind="publish" tone="primary">＋ 新建发布</Action></PageHeader>
+ <div class="management-summary"><span><strong>{{snapshot.releases.length}}</strong> 条发布 · <strong>{{active}}</strong> 条活动发布</span><span>删除发布不删固件 · 状态按制品同步</span></div>
+ <Panel title="发布历史"><template #extra><span class="panel-note">活动版本与历史记录分明</span></template><div class="resource-toolbar in-panel"><div class="search-field"><span>⌕</span><input v-model="query" type="search" placeholder="搜索版本、型号、SHA 或发布说明" aria-label="搜索发布"/></div><select v-model="channel" class="filter-select" aria-label="发布通道"><option value="">全部通道</option><option value="stable">stable</option><option value="beta">beta</option></select><select v-model="status" class="filter-select" aria-label="发布状态"><option value="">全部发布</option><option value="active">活动发布</option><option value="inactive">已撤回 / 已替代</option></select><span class="result-count">{{rows.length}} 项结果</span></div>
+ <Table v-if="rows.length" :columns="['版本 / 构建','硬件型号','通道 / 序号','发布时间','状态','操作']" kind="release-table"><tr v-for="item in rows" :key="item.id" :data-release-id="item.id" :data-artifact-id="item.artifact_id"><td class="release-identity"><BuildIdentity :item="item"/></td><td>{{item.target_name}}</td><td><Badge :tone="item.channel==='beta'?'blue':''">{{item.channel}}</Badge><small class="mono">发布 #{{item.seq}}</small></td><td>{{when(item.created)}}</td><td class="release-status"><FileStatus :item="item" release/></td><td><div class="actions release-actions"><Action kind="edit-release" :id="item.id">编辑说明</Action><Action v-if="item.active" kind="withdraw" :id="item.id" tone="danger">撤回</Action><Action v-else-if="item.can_publish" kind="republish" :id="item.id">重新发布</Action><Action kind="delete-release" :id="item.id" tone="danger">删除发布</Action></div></td></tr></Table>
+ <Empty v-else :title="query||channel||status?'没有匹配的发布':'还没有发布记录'" description="选择可用固件，发布到 stable 或 beta 通道。"><button v-if="query||channel||status" @click="query='';channel='';status=''">清空筛选</button></Empty></Panel>
+ <p class="form-hint">版本号相同不代表文件相同。活动发布请先撤回；已有升级记录的发布保留历史，不会级联删除。</p>
+</template>
